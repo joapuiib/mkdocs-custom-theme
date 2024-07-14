@@ -4,4 +4,4 @@ theme:
   name: custom-theme
 
 plugins:
-  - search
+  - material/search
