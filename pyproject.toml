@@ -1,0 +1,48 @@
+[build-system]
+# Minimum requirements for the build system to execute.
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = 'mkdocs-custom-theme'
+dynamic = ['version']
+description = "Custom theme for MkDocs"
+readme = {file = 'README.md', content-type='text/markdown'}
+authors = [
+    {name = 'Joan Puigcerver', email = 'joapuiib@gmail.com'}
+]
+maintainers = [
+    {name = 'Joan Puigcerver', email = 'joapuiib@gmail.com'}
+]
+license = {file = 'LICENSE'}
+requires-python = '>=3.5'
+dependencies = [
+    'mkdocs>=1.1'
+]
+
+# [project.urls]
+# 'Homepage' = ''
+# 'Repository' = ''
+# 'Issue Tracker' = ''
+
+[project.entry-points.'mkdocs.themes']
+custom-theme = 'custom_theme'
+
+[project.entry-points."mkdocs.plugins"]
+"custom_theme/blog" = "material.plugins.blog.plugin:BlogPlugin"
+"custom_theme/group" = "material.plugins.group.plugin:GroupPlugin"
+"custom_theme/info" = "material.plugins.info.plugin:InfoPlugin"
+"custom_theme/offline" = "material.plugins.offline.plugin:OfflinePlugin"
+"custom_theme/privacy" = "material.plugins.privacy.plugin:PrivacyPlugin"
+"custom_theme/search" = "material.plugins.search.plugin:SearchPlugin"
+"custom_theme/social" = "material.plugins.social.plugin:SocialPlugin"
+"custom_theme/tags" = "material.plugins.tags.plugin:TagsPlugin"
+
+# [tool.setuptools]
+# license-files = ['LICENSE', 'bootswatch.LICENSE']
+
+[tool.setuptools.package-data]
+"*" = ['*.css', '*.yml']
+
+[tool.setuptools.dynamic]
+version = {attr = 'custom_theme.__version__'}
