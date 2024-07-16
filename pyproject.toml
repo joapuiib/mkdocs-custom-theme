@@ -46,3 +46,7 @@ custom-theme = 'custom_theme'
 
 [tool.setuptools.dynamic]
 version = {attr = 'custom_theme.__version__'}
+
+[tool.setuptools.packages.find]
+include = ["custom_theme*"]
+exclude = ["site*", "tests*"]
