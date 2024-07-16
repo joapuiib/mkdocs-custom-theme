@@ -2,6 +2,14 @@ site_name: My Docs
 
 theme:
   name: custom-theme
+  icon:
+    logo: devicons/java-plain
+
 
 plugins:
   - material/search
+
+markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
